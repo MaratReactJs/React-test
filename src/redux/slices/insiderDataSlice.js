@@ -5,7 +5,7 @@ export const fetchInsiderData = createAsyncThunk(
 	"insiderData/fetch",
 	async () => {
 		const response = await fetch(
-			"https://api.iex.cloud/v1/data/CORE/INSIDERS?last=100&token=sk_c76810c6f45f467c85b45b846f92720f"
+			"https://api.iex.cloud/v1/data/CORE/INSIDERS?last=100&token=удалилключ"
 		);
 		const data = await response.json();
 		return data;
