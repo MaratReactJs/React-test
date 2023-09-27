@@ -3,6 +3,7 @@ import { BiLogoReact } from "react-icons/bi";
 import styles from "./BottomHeader.module.css";
 import CatalogButton from "./CatalogButton/CatalogButton";
 import SearchField from "./SearchField/SearchField";
+import UserInterface from "./UserInterface/UserInterface";
 
 const BottomHeader = () => {
 	return (
@@ -10,6 +11,7 @@ const BottomHeader = () => {
 			<BiLogoReact className={styles.logo} />
 			<CatalogButton />
 			<SearchField />
+			<UserInterface />
 		</div>
 	);
 };

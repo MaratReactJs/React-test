@@ -1,0 +1,82 @@
+.userInterface {
+	align-items: center;
+	background: #0d1115;
+	border-radius: 8px;
+	display: flex;
+	column-gap: 0px;
+	height: 50px;
+}
+
+.icon {
+	height: 3em;
+	width: 3em;
+	transition: color 0.3s;
+}
+
+.compare {
+	color: #8b96a3;
+}
+
+.favorite {
+	color: #8b96a3;
+}
+
+.cart {
+	color: #8b96a3;
+}
+
+.user {
+	color: #8b96a3;
+}
+
+.compare:hover {
+	color: #0093c4;
+}
+
+.favorite:hover {
+	color: #0093c4;
+}
+
+.cart:hover {
+	color: #0093c4;
+}
+
+.user:hover {
+	color: #0093c4;
+}
+
+.figureCompare {
+	width: 1px;
+	font-size: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: pointer;
+}
+
+.figureFavorite {
+	width: 1px;
+	font-size: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: pointer;
+}
+
+.figureCart {
+	width: 1px;
+	font-size: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: pointer;
+}
+
+.figureUser {
+	width: 1px;
+	font-size: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: pointer;
+}
