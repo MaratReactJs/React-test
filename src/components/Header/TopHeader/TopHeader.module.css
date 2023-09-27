@@ -1,0 +1,36 @@
+.topHeader {
+	color: #8b96a3;
+	display: flex;
+	font-size: 14px;
+	width: 80%;
+	height: 30px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.topHeader ul {
+	list-style-type: none;
+	display: flex;
+	column-gap: 10px;
+}
+
+.topHeader li:hover {
+	color: #fff;
+	cursor: pointer;
+}
+
+.lang {
+	display: flex;
+	gap: 10px;
+}
+
+.selected {
+	background-color: #0093c4;
+	color: #fff;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 14px;
+	padding: 2px 4px;
+}
