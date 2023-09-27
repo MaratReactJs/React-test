@@ -1,29 +1,10 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchInsiderData } from "./redux/slices/insiderDataSlice";
-import Table from "./components/Table";
+import React from "react";
 
 const App = () => {
-	const dispatch = useDispatch();
-	const insiderData = useSelector((state) => state.insiderData);
-
-	useEffect(() => {
-		dispatch(fetchInsiderData());
-	}, [dispatch]);
-
-	if (insiderData.status === "loading") {
-		return <div>Loading...</div>;
-	}
-
-	if (insiderData.status === "failed") {
-		return <div>Error: {insiderData.error}</div>;
-	}
-
 	return (
-		<div>
+		<main>
 			<h2>Insider Data</h2>
-			<Table insiderData={insiderData} />
-		</div>
+		</main>
 	);
 };
 
