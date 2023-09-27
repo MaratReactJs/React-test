@@ -6,6 +6,7 @@ const Header = () => {
 	return (
 		<header className={styles.header}>
 			<TopHeader />
+			<div className={styles.line}></div>
 		</header>
 	);
 };

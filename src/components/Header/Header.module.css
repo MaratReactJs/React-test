@@ -2,3 +2,8 @@ header {
 	background-color: #000000;
 	height: 100px;
 }
+
+.line {
+	background: linear-gradient(180deg, #69d9ff, rgba(0, 116, 255, 0));
+	height: 3px;
+}
