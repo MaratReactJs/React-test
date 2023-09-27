@@ -1,0 +1,36 @@
+.searchField {
+	border-radius: 8px;
+	font-size: 16px;
+	font-weight: 500;
+	height: 50px;
+	outline: none;
+	padding: 0 12px;
+	width: 50%;
+	border: none;
+}
+
+::placeholder {
+	color: #8b96a3;
+	font-size: 16px;
+	left: 0;
+	overflow: hidden;
+	padding-left: 12px;
+	pointer-events: none;
+	position: absolute;
+	text-overflow: ellipsis;
+	top: 15px;
+	transition: 0.2s;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	width: calc(100% - 50px);
+}
+
+.searchField::-webkit-search-cancel-button {
+	/*  Если вдруг захочу поменять стиль крестика
+	-webkit-appearance: none;
+	width: 20px;
+	height: 20px;
+	background: url(https://dummyimage.com/20x20/ffffff/7b00ff.png&text=X);  */
+}
