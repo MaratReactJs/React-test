@@ -1,0 +1,13 @@
+.bottomHeader {
+	margin: 0 auto;
+	width: 80%;
+	height: 70px;
+	display: flex;
+	align-items: center;
+}
+
+.logo {
+	color: #0093c4;
+	width: 3em;
+	height: 3em;
+}
