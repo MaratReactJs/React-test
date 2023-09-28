@@ -4,12 +4,14 @@ import { BsWhatsapp } from "react-icons/bs";
 
 const Contacts = () => {
 	return (
-		<div className={styles.container}>
+		<div className={styles.contacts}>
 			<figure>
 				<BsWhatsapp className={styles.icon} />
 			</figure>
 
-			<span className={styles.number}>8 (707) 907-17-77</span>
+			<a className={styles.number} href="tel:+77079071777">
+				+7 (707) 907-17-77
+			</a>
 		</div>
 	);
 };
