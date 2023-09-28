@@ -3,8 +3,9 @@
 	background: #0d1115;
 	border-radius: 8px;
 	display: flex;
-	column-gap: 0px;
+	column-gap: 15px;
 	height: 50px;
+	padding: 0 15px;
 }
 
 .icon {
@@ -46,7 +47,6 @@
 }
 
 .figureCompare {
-	width: 1px;
 	font-size: 10px;
 	display: flex;
 	flex-direction: column;
@@ -55,7 +55,6 @@
 }
 
 .figureFavorite {
-	width: 1px;
 	font-size: 10px;
 	display: flex;
 	flex-direction: column;
@@ -64,7 +63,6 @@
 }
 
 .figureCart {
-	width: 1px;
 	font-size: 10px;
 	display: flex;
 	flex-direction: column;
@@ -73,7 +71,6 @@
 }
 
 .figureUser {
-	width: 1px;
 	font-size: 10px;
 	display: flex;
 	flex-direction: column;
