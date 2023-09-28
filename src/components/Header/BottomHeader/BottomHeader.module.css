@@ -1,10 +1,22 @@
 .bottomHeader {
 	margin: 0 auto;
-	width: 80%;
+	width: 70%;
 	height: 70px;
 	display: flex;
 	align-items: center;
 	column-gap: 15px;
+}
+
+@media (max-width: 1500px) {
+	.bottomHeader {
+		width: 90%;
+	}
+}
+
+@media (max-width: 1300px) {
+	.bottomHeader {
+		width: 96%;
+	}
 }
 
 .logo {
