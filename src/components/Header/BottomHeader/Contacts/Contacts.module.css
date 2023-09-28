@@ -1,0 +1,26 @@
+.contacts {
+	color: #8b96a3;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: 15px;
+}
+
+.icon {
+	width: 28px;
+	height: 28px;
+	cursor: pointer;
+}
+
+.icon:hover {
+	color: #0093c4;
+}
+
+.number {
+	cursor: pointer;
+	font-size: 18px;
+}
+
+.number:hover {
+	color: #fff;
+}
