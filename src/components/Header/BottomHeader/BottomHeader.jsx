@@ -9,7 +9,10 @@ import UserInterface from "./UserInterface/UserInterface";
 const BottomHeader = () => {
 	return (
 		<div className={styles.bottomHeader}>
-			<BiLogoReact className={styles.logo} />
+			<figure>
+				<BiLogoReact className={styles.logo} />
+			</figure>
+
 			<CatalogButton />
 			<SearchField />
 			<UserInterface />

@@ -1,9 +1,11 @@
-.contacts {
-	color: #8b96a3;
+.container {
 	display: flex;
 	justify-content: space-between;
+	color: #8b96a3;
 	align-items: center;
-	column-gap: 15px;
+}
+
+.contacts {
 }
 
 .icon {
