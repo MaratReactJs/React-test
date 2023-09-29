@@ -24,7 +24,10 @@ const Slider = () => {
 			}}
 			navigation={true}
 			modules={[Pagination, Navigation]}
-			className={styles.swiper}>
+			className={styles.swiper}
+			style={{
+				"--swiper-navigation-size": "24px",
+			}}>
 			<SwiperSlide>
 				<img src={tv} alt="" />
 			</SwiperSlide>

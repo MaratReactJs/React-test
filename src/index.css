@@ -13,17 +13,34 @@ body {
 }
 
 /* Стили для стрелок */
-.swiper-button-next,
-.swiper-button-prev {
-	position: absolute;
-	top: 50%;
+.swiper-button-next {
 	transform: translateY(-50%);
-	transition: opacity 0.3s ease-in-out;
+	transition: all 0.2s ease-out;
+	background-color: #fff;
+	padding: 10px;
+	border-radius: 50%;
 	opacity: 0; /* Скрываем стрелки по умолчанию */
+	right: 30px;
+}
+.swiper-button-prev {
+	transform: translateY(-50%);
+	transition: all 0.2s ease-out;
+	background-color: #fff;
+	padding: 10px;
+	border-radius: 50%;
+	opacity: 0; /* Скрываем стрелки по умолчанию */
+	left: 30px;
+}
+
+.swiper:hover .swiper-button-prev {
+	opacity: 1;
+	left: -10px;
+	z-index: 10;
 }
 
 /* Показываем стрелки при наведении */
-.swiper:hover .swiper-button-next,
-.swiper:hover .swiper-button-prev {
+.swiper:hover .swiper-button-next {
 	opacity: 1;
+	right: -10px;
+	z-index: 10;
 }
