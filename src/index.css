@@ -34,13 +34,11 @@ body {
 
 .swiper:hover .swiper-button-prev {
 	opacity: 1;
-	left: -10px;
-	z-index: 10;
+	left: 0;
 }
 
 /* Показываем стрелки при наведении */
 .swiper:hover .swiper-button-next {
 	opacity: 1;
-	right: -10px;
-	z-index: 10;
+	right: 0;
 }
