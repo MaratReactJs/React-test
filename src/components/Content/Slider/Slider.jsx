@@ -26,7 +26,8 @@ const Slider = () => {
 			modules={[Pagination, Navigation]}
 			className={styles.swiper}
 			style={{
-				"--swiper-navigation-size": "24px",
+				"--swiper-navigation-size": "18px",
+				"--swiper-navigation-color": "#8b96a3",
 			}}>
 			<SwiperSlide>
 				<img src={tv} alt="" />
