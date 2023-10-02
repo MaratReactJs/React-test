@@ -1,5 +1,5 @@
 .content {
-	width: 75%;
+	width: 70%;
 	margin: 16px auto;
 }
 
@@ -18,12 +18,13 @@
 .sliderContainer {
 	display: flex;
 	height: 525px;
+	column-gap: 20px;
 }
 
 .banners {
 	width: 43%;
 	display: flex;
-	justify-content: space-between;
+	column-gap: 20px;
 }
 
 img {
