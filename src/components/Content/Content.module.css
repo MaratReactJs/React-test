@@ -1,6 +1,6 @@
 .content {
-	width: 70%;
-	margin-top: 16px;
+	width: 75%;
+	margin: 16px auto;
 }
 
 @media (max-width: 1500px) {
@@ -13,4 +13,25 @@
 	.content {
 		width: 96%;
 	}
+}
+
+.sliderContainer {
+	display: flex;
+	height: 525px;
+}
+
+.banners {
+	width: 43%;
+	display: flex;
+	justify-content: space-between;
+}
+
+img {
+	border-radius: 15px;
+}
+
+.leftBanners {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
