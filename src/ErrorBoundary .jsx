@@ -6,20 +6,21 @@ class ErrorBoundary extends Component {
 		this.state = { hasError: false };
 	}
 
-	componentDidCatch(error, info) {
-		// Обрабатываем ошибку
-		console.error("Ошибка в компоненте:", error, info);
-		this.setState({ hasError: true });
+	static getDerivedStateFromError(error) {
+		// Обновить состояние, чтобы следующий рендер отображал запасной интерфейс.
+		return { hasError: true };
+	}
+
+	componentDidCatch(error, errorInfo) {
+		// Здесь вы можете отправить ошибку на сервер или выполнить другие действия при обработке ошибки.
+		console.error("Произошла ошибка:", error);
 	}
 
 	render() {
+		console.log(this.state.hasError, "nen ye;yf jifdf");
 		if (this.state.hasError) {
-			// Если произошла ошибка, отображаем сообщение об ошибке
-			return (
-				<div>
-					Что-то пошло не так. Пожалуйста, перезагрузите страницу.
-				</div>
-			);
+			// Выводите резервный интерфейс
+			return <div>Что-то пошло не так. Мы извиняемся за неудобства.</div>;
 		}
 		return this.props.children;
 	}

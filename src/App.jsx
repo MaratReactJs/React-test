@@ -30,6 +30,18 @@ class App extends Component {
 		}
 	}
 
+	// Функция, которая вызывает ошибку для тестирования ErrorBoundary
+	throwError = () => {
+		try {
+			throw new Error(
+				"Пример перехвата ошибки для тестирования ErrorBoundary"
+			);
+		} catch (error) {
+			// Обрабатываем ошибку здесь
+			console.log(error, "error");
+		}
+	};
+
 	fetchData = (page) => {
 		// Функция для получения данных с сервера
 		const { pageSize, searchTerm } = this.state;
@@ -111,6 +123,7 @@ class App extends Component {
 					/>
 					<button onClick={this.handleSearch}>Поиск</button>
 					<button onClick={this.handleReset}>Сброс</button>{" "}
+					<button onClick={this.throwError}>Вызвать ошибку</button>
 					{/* Добавлена кнопка сброса */}
 				</div>
 				<div>
