@@ -95,6 +95,8 @@ class App extends Component {
 
 	render() {
 		const { searchResults, currentPage, searchTerm } = this.state;
+		console.log(searchResults);
+
 		// Извлекаем данные из состояния компонента
 
 		return (
@@ -114,9 +116,9 @@ class App extends Component {
 				<div>
 					<ul>
 						{searchResults.map((item) => (
-							<li key={item.id}>
+							<li key={item.uid}>
 								<h3>{item.name}</h3>
-								<p>{item.description}</p>
+								<p>{item.symbol}</p>
 							</li>
 						))}
 					</ul>
