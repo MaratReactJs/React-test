@@ -2,73 +2,90 @@ import React, { Component } from "react";
 import axios from "axios";
 
 class App extends Component {
+	// Объявление класса компонента "App" наследующего функциональность React.Component
 	constructor(props) {
 		super(props);
+		// Вызов конструктора базового класса и инициализация состояния компонента
 		this.state = {
-			pageNumber: 1,
-			pageSize: 10,
-			data: [],
-			currentPage: 1,
-			searchTerm: "",
-			searchResults: [],
+			pageNumber: 1, // Номер текущей страницы
+			pageSize: 10, // Размер страницы
+			data: [], // Данные с сервера
+			currentPage: 1, // Текущая страница
+			searchTerm: "", // Поисковый запрос
+			searchResults: [], // Результаты поиска
 		};
 	}
 
 	componentDidMount() {
-		this.fetchData(1);
+		// Метод жизненного цикла: вызывается после монтирования компонента
+		this.fetchData(1); // Вызываем функцию fetchData с номером страницы 1
 		const savedSearchTerm = localStorage.getItem("searchTerm");
+		// Получаем сохраненный поисковый запрос из локального хранилища
 		if (savedSearchTerm) {
+			// Если сохраненный поисковый запрос существует
 			this.setState({ searchTerm: savedSearchTerm }, () => {
+				// Устанавливаем его как текущий поисковый запрос и выполняем поиск
 				this.handleSearch();
 			});
 		}
 	}
 
 	fetchData = (page) => {
+		// Функция для получения данных с сервера
 		const { pageSize, searchTerm } = this.state;
 		let apiUrl = `https://stapi.co/api/v2/rest/element/search?pageNumber=${page}&pageSize=${pageSize}`;
+		// Создаем URL API с учетом номера страницы и размера страницы
 		if (searchTerm) {
 			apiUrl += `&search=${searchTerm.trim()}`;
 		}
+		// Если есть поисковый запрос, добавляем его к URL
 
 		axios
 			.get(apiUrl)
 			.then((response) => {
+				// Выполняем GET-запрос к API
 				const newData = response.data;
 				this.setState({
-					data: newData.elements,
-					currentPage: page,
+					data: newData.elements, // Обновляем данные с сервера
+					currentPage: page, // Обновляем текущую страницу
 				});
-				this.updateSearchResults();
+				this.updateSearchResults(); // Обновляем результаты поиска
 			})
 			.catch((error) => {
 				console.error("Ошибка при запросе данных:", error);
+				// Обработка ошибки запроса и вывод сообщения в консоль
 			});
 	};
 
 	handleSearchChange = (event) => {
+		// Обработчик изменений в поле ввода поиска
 		this.setState({
-			searchTerm: event.target.value,
+			searchTerm: event.target.value, // Обновляем поисковый запрос при изменении ввода
 		});
 	};
 
 	handleSearch = () => {
+		// Функция для выполнения поиска
 		const { searchTerm } = this.state;
 		localStorage.setItem("searchTerm", searchTerm);
-		this.fetchData(1);
+		// Сохраняем поисковый запрос в локальном хранилище
+		this.fetchData(1); // Выполняем поиск для первой страницы
 	};
 
 	updateSearchResults = () => {
+		// Обновление результатов поиска
 		const { data, searchTerm } = this.state;
+		// Фильтруем данные для результатов поиска на основе поискового запроса
 		const searchResults = data.filter((item) =>
 			item.name.toLowerCase().includes(searchTerm.toLowerCase())
 		);
 		this.setState({
-			searchResults,
+			searchResults, // Обновляем результаты поиска
 		});
 	};
 
 	handleReset = () => {
+		// Функция для сброса поискового запроса
 		this.setState({
 			searchTerm: "", // Сброс поискового запроса
 		});
@@ -78,6 +95,7 @@ class App extends Component {
 
 	render() {
 		const { searchResults, currentPage, searchTerm } = this.state;
+		// Извлекаем данные из состояния компонента
 
 		return (
 			<div>
