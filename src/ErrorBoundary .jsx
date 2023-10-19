@@ -17,7 +17,6 @@ class ErrorBoundary extends Component {
 	}
 
 	render() {
-		console.log(this.state.hasError, "nen ye;yf jifdf");
 		if (this.state.hasError) {
 			// Выводите резервный интерфейс
 			return <div>Что-то пошло не так. Мы извиняемся за неудобства.</div>;

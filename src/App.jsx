@@ -33,9 +33,7 @@ class App extends Component {
 	// Функция, которая вызывает ошибку для тестирования ErrorBoundary
 	throwError = () => {
 		try {
-			throw new Error(
-				"Пример перехвата ошибки для тестирования ErrorBoundary"
-			);
+			throw new Error("Перехват ошибки ErrorBoundary");
 		} catch (error) {
 			// Обрабатываем ошибку здесь
 			console.log(error, "error");
