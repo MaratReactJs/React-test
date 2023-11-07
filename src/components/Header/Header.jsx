@@ -1,8 +1,10 @@
-import React from "react";
-import styles from "./Header.module.css";
-import logo from "./logo.svg";
-import language from "./iconoir_language.svg";
-import back from "./back.svg";
+import React from 'react';
+import styles from './Header.module.css';
+import logo from './logo.svg';
+import language from './iconoir_language.svg';
+import back from './back.svg';
+import decimal from './decimal.svg';
+import wallet from './solar_wallet-money-linear.svg';
 
 const Header = ({ openModal }) => {
 	return (
@@ -13,7 +15,7 @@ const Header = ({ openModal }) => {
 				</div>
 				<div className={styles.navigation}>
 					<ul>
-						<li>Главная</li>
+						<li className={styles.active}>Главная</li>
 						<li>Лендинг</li>
 						<li>FAQ</li>
 						<li>Обратная связь</li>
@@ -27,8 +29,14 @@ const Header = ({ openModal }) => {
 					RU
 					<img src={back} alt="back" />
 				</span>
-				<span>Decimal</span>
-				<span onClick={openModal}>Connect wallet</span>
+				<span className={styles.decimal}>
+					<img src={decimal} alt="Decimal" />
+					Decimal
+				</span>
+				<span className={styles.wallet} onClick={openModal}>
+					<img src={wallet} alt="Wallet" />
+					Connect wallet
+				</span>
 			</div>
 		</header>
 	);

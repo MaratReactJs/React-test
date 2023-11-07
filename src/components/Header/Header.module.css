@@ -26,19 +26,44 @@
 .icons {
 	display: flex;
 	gap: 20px;
-	font-size: 20px;
+	font-size: 14px;
 }
 
 .language {
+	border-radius: 15px;
 	width: 65px;
 	height: 32px;
-	border-radius: 25%;
-	padding: 0 3px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 	background-color: #222342;
-	font-size: 14px;
+	cursor: pointer;
+}
+
+.decimal {
+	border-radius: 15px;
+	width: 100px;
+	height: 32px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #222342;
+	cursor: pointer;
+}
+
+.wallet {
+	border-radius: 15px;
+	width: 150px;
+	height: 32px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #222342;
+	cursor: pointer;
+}
+
+.active {
+	color: #40a5f3;
 }
 
 @media (max-width: 768px) {

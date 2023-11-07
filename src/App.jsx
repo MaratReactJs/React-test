@@ -1,6 +1,8 @@
-import React, { useState } from "react";
-import Header from "./components/Header/Header";
-import Modal from "./components/Modal";
+import React, { useState } from 'react';
+import Header from './components/Header/Header';
+import Modal from './components/Modal/Modal';
+import Footer from './components/Footer/Footer';
+import Main from './components/Main/Main';
 
 function App() {
 	const [isModalOpen, setModalOpen] = useState(false);
@@ -14,11 +16,12 @@ function App() {
 	};
 
 	return (
-		<div className="App">
+		<body>
 			<Header openModal={openModal} />
 			<Modal isOpen={isModalOpen} onClose={closeModal} />
-			{/* Ваш контент */}
-		</div>
+			<Main />
+			<Footer />
+		</body>
 	);
 }
 
