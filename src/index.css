@@ -1,16 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap');
 
 * {
 	margin: 0;
+	box-sizing: border-box;
 }
 
 body {
 	display: flex;
-   flex-direction: column;
-   min-height: 100vh;
+	flex-direction: column;
+	min-height: 100vh;
 	background-color: #19172f;
-	box-sizing: border-box;
-	font-family: "Poppins", sans-serif;
+
+	font-family: 'Poppins', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }

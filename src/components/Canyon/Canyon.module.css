@@ -1,0 +1,50 @@
+.canyon {
+	border-radius: 15px;
+	width: 100%;
+	height: 120px;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.sell {
+	background-color: #292946;
+}
+
+.buy {
+	background-color: #4a495f;
+}
+
+.operation {
+	font-size: 16px;
+	font-weight: 300;
+	color: #9798aa;
+}
+
+.share {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.name {
+	width: 25%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: #fff;
+	font-size: 18px;
+}
+
+.price {
+	color: #fff;
+	font-size: 18px;
+}
+
+.volatility {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: #9798aa;
+}
