@@ -1,9 +1,53 @@
-header {
-	background-color: #000000;
-	height: 100px;
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 20px;
+	color: white;
+	font-size: 14px;
 }
 
-.line {
-	background: linear-gradient(180deg, #69d9ff, rgba(0, 116, 255, 0));
-	height: 3px;
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navigation ul {
+	list-style: none;
+	display: flex;
+	gap: 20px;
+}
+
+.navigation li {
+	cursor: pointer;
+}
+
+.icons {
+	display: flex;
+	gap: 20px;
+	font-size: 20px;
+}
+
+.language {
+	width: 65px;
+	height: 32px;
+	border-radius: 25%;
+	padding: 0 3px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #222342;
+	font-size: 14px;
+}
+
+@media (max-width: 768px) {
+	.header {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.navigation ul {
+		flex-direction: column;
+	}
 }
