@@ -121,3 +121,20 @@
 		height: 32px;
 	}
 }
+
+@media (max-width: 390px) {
+	.icons {
+		width: 100%;
+		font-size: 14px;
+	}
+
+	.decimal {
+		width: 180px;
+		height: 32px;
+	}
+
+	.wallet {
+		width: 260px;
+		height: 32px;
+	}
+}
