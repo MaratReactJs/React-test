@@ -1,0 +1,23 @@
+.languagePopup {
+	z-index: 1000;
+	position: absolute;
+	margin-top: 35px;
+	margin-left: 2px;
+	background-color: #222342;
+	padding: 12px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+button {
+	border: none;
+	background-color: #222342;
+	color: #fff;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+button:hover {
+	color: #40a5f3;
+}

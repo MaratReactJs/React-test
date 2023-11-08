@@ -23,10 +23,19 @@
 	cursor: pointer;
 }
 
+.navigation li:first-child {
+	color: #40a5f3;
+}
+
 .icons {
 	display: flex;
 	gap: 20px;
 	font-size: 14px;
+}
+
+.languageContainer {
+	display: flex;
+	flex-direction: column;
 }
 
 .language {
@@ -62,17 +71,8 @@
 	cursor: pointer;
 }
 
-.active {
-	color: #40a5f3;
-}
-
-@media (max-width: 768px) {
-	.header {
-		flex-direction: column;
-		text-align: center;
-	}
-
-	.navigation ul {
-		flex-direction: column;
+@media (max-width: 926px) {
+	.navigation {
+		display: none;
 	}
 }
