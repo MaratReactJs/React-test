@@ -5,6 +5,8 @@
 	padding: 10px 20px;
 	color: white;
 	font-size: 14px;
+	min-height: 10vh;
+	padding: 0 5%;
 }
 
 .container {
