@@ -88,5 +88,19 @@
 
 	.icons {
 		width: 100%;
+		font-size: 18px;
+	}
+
+	.language {
+		width: 85px;
+		height: 32px;
+	}
+	.decimal {
+		width: 120px;
+		height: 32px;
+	}
+	.wallet {
+		width: 180px;
+		height: 32px;
 	}
 }

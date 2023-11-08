@@ -11,19 +11,19 @@ const MobileNavigation = () => {
 		<nav className={styles.mobileNavigation}>
 			<ul>
 				<li>
-					<img width="80" src={update} alt="update" />
+					<img width="40" src={update} alt="update" />
 				</li>
 				<li>
-					<img width="80" src={question} alt="question" />
+					<img width="40" src={question} alt="question" />
 				</li>
 				<li>
-					<img width="80" src={list} alt="list" />
+					<img width="40" src={list} alt="list" />
 				</li>
 				<li>
-					<img width="80" src={message} alt="message" />
+					<img width="40" src={message} alt="message" />
 				</li>
 				<li>
-					<img width="80" src={internet} alt="internet" />
+					<img width="40" src={internet} alt="internet" />
 				</li>
 			</ul>
 		</nav>
