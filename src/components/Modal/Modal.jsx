@@ -1,11 +1,11 @@
-import React from 'react';
-import styles from './Modal.module.css';
-import Canyon from '../Canyon/Canyon';
-import cryg from './CRYG.svg';
-import del from './del 1.svg';
-import back from './../Header/back.svg';
-import znak from './znak.svg';
-import wallet from './wallet.svg';
+import React from "react";
+import styles from "./Modal.module.css";
+import Canyon from "../Canyon/Canyon";
+import cryg from "./CRYG.svg";
+import del from "./del 1.svg";
+import back from "./../Header/back.svg";
+import znak from "./znak.svg";
+import wallet from "./wallet.svg";
 
 const Modal = ({ isOpen, onClose }) => {
 	if (!isOpen) {
@@ -14,7 +14,9 @@ const Modal = ({ isOpen, onClose }) => {
 
 	return (
 		<div className={styles.modalOverlay} onClick={onClose}>
-			<div className={styles.modalContent}>
+			<div
+				className={styles.modalContent}
+				onClick={(e) => e.stopPropagation()}>
 				<div className={styles.heading}>
 					<p className={styles.active}>Swap</p>
 					<p>Pools</p>
@@ -40,13 +42,13 @@ const Modal = ({ isOpen, onClose }) => {
 				/>
 
 				<div className={styles.rate}>
-					<img src={znak} alt="znak" /> 1 CRYG = 714.543 DEL{' '}
+					<img src={znak} alt="znak" /> 1 CRYG = 714.543 DEL{" "}
 					<span className={styles.assignment}>($331.42)</span>
 				</div>
 
-				<button className={styles.button}>
+				<button className={styles.button} onClick={onClose}>
 					<img src={wallet} alt="wallet" />
-					Сonnect walley
+					Сonnect wallet
 				</button>
 			</div>
 		</div>

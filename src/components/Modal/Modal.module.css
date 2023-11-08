@@ -21,6 +21,18 @@
 	padding: 20px;
 	border-radius: 15px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	animation: modalAppear 0.3s ease;
+}
+
+@keyframes modalAppear {
+	from {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 .heading {
@@ -60,4 +72,5 @@
 	background-color: #40a5f3;
 	border: none;
 	color: #fff;
+	cursor: pointer;
 }

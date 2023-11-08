@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import Header from './components/Header/Header';
-import Modal from './components/Modal/Modal';
-import Footer from './components/Footer/Footer';
-import Main from './components/Main/Main';
+import React, { useState } from "react";
+import Header from "./components/Header/Header";
+import Modal from "./components/Modal/Modal";
+import Footer from "./components/Footer/Footer";
+import Main from "./components/Main/Main";
 
 function App() {
 	const [isModalOpen, setModalOpen] = useState(false);
