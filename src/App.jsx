@@ -17,7 +17,7 @@ function App() {
 	};
 
 	return (
-		<body>
+		<>
 			<Header openModal={openModal} />
 			<Modal isOpen={isModalOpen} onClose={closeModal} />
 			<Main />
@@ -25,7 +25,7 @@ function App() {
 				<Footer />
 				<MobileNavigation />
 			</>
-		</body>
+		</>
 	);
 }
 
