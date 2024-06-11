@@ -4,6 +4,14 @@ import styles from "./Table.module.css";
 
 const Table = () => {
 	console.log(data, "data");
+
+	const renderData = (data) => {
+		return data.map((source) => (
+			<tr key={source.id}>
+				<td className={styles.td}>{source.name}</td>
+			</tr>
+		));
+	};
 	return (
 		<table className={styles.table}>
 			<thead className={styles.thead}>
@@ -26,15 +34,7 @@ const Table = () => {
 					<th className={styles.th}>conversions</th>
 				</tr>
 			</thead>
-			{data && (
-				<tbody className={styles.tbody}>
-					{data.map((source) => (
-						<tr key={source.id}>
-							<td className={styles.td}>{source.name}</td>
-						</tr>
-					))}
-				</tbody>
-			)}
+			{data && <tbody className={styles.tbody}>{renderData(data)}</tbody>}
 		</table>
 	);
 };
