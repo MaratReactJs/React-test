@@ -1,40 +1,41 @@
 import React from "react";
 import { data } from "./../../api";
-import styles from "./Table.module.css";
+
+const renderTable = (data) => {
+	return data.map(({ id, name, isNextSourceNameEmpty, subSource }) => {
+		return (
+			<tr key={id}>
+				<td>{name}</td>
+			</tr>
+		);
+	});
+};
+console.log(data);
 
 const Table = () => {
-	console.log(data, "data");
-
-	const renderData = (data) => {
-		return data.map((source) => (
-			<tr key={source.id}>
-				<td className={styles.td}>{source.name}</td>
-			</tr>
-		));
-	};
 	return (
-		<table className={styles.table}>
-			<thead className={styles.thead}>
+		<table>
+			<thead>
 				<tr>
-					<th className={styles.th}>Источник</th>
-					<th className={styles.th}>Подысточник</th>
-					<th className={styles.th}>Подысточник-2 уровня</th>
-					<th className={styles.th}>Подысточник-3 уровня</th>
-					<th className={styles.th}>views</th>
-					<th className={styles.th}>sells</th>
-					<th className={styles.th}>secondary_orders</th>
-					<th className={styles.th}>roi</th>
-					<th className={styles.th}>revenue</th>
-					<th className={styles.th}>profit</th>
-					<th className={styles.th}>impressions</th>
-					<th className={styles.th}>expenses</th>
-					<th className={styles.th}>deals</th>
-					<th className={styles.th}>cps</th>
-					<th className={styles.th}>cpa</th>
-					<th className={styles.th}>conversions</th>
+					<th>Source</th>
+					<th>SubSource-1</th>
+					<th>SubSource-2</th>
+					<th>SubSource-3</th>
+					<th>Views</th>
+					<th>Deals</th>
+					<th>Sells</th>
+					<th>Impressions</th>
+					<th>Expenses</th>
+					<th>Secondary Orders</th>
+					<th>Conversions</th>
+					<th>Profit</th>
+					<th>Revenue</th>
+					<th>ROI</th>
+					<th>CPA</th>
+					<th>CPS</th>
 				</tr>
 			</thead>
-			{data && <tbody className={styles.tbody}>{renderData(data)}</tbody>}
+			<tbody>{renderTable(data)}</tbody>
 		</table>
 	);
 };
