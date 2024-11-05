@@ -1,32 +1,31 @@
 import React from "react";
 import { data } from "./../../api";
 
-// Функция для рендеринга вложенных источников (subSource)
-const renderSubSources = (subSource, level = 1) => {
-	if (!subSource || subSource.length === 0) return null; // Проверка на наличие вложенных источников
+// Функция для рендеринга вложенных источников (subSource) на заданном уровне
+const renderNestedSources = (subSource, level = 1) => {
+	// Если нет вложенных источников, возвращаем null
+	if (!subSource || subSource.length === 0) return null;
 
-	return subSource.map(
-		({ id, name, isNextSourceNameEmpty, subSource, data }) => (
-			<React.Fragment key={id}>
-				<tr>
-					{/* Добавляем пустые ячейки для выравнивания уровня */}
-					{Array(level)
-						.fill(null)
-						.map((_, index) => (
-							<td key={index}></td>
-						))}
-					{/* Отображаем имя текущего уровня */}
-					<td>{name}</td>
-					{/* Добавляем пустые ячейки, чтобы остальные столбцы были на своих местах */}
-					{Array(3 - level)
-						.fill(null)
-						.map((_, index) => (
-							<td key={index}></td>
-						))}
-					{/* Если есть данные, отображаем их */}
-					{data &&
-						data.length > 0 &&
-						data.map((entry, index) => (
+	// Обрабатываем каждый элемент в subSource
+	return subSource.map(({ id, name, isNextSourceNameEmpty, subSource, data }) => (
+		<React.Fragment key={id}>
+			<tr>
+				{/* Вставляем пустые ячейки для выравнивания уровня */}
+				{[...Array(level)].map((_, index) => (
+					<td key={index}></td>
+				))}
+
+				{/* Отображаем название текущего источника */}
+				<td>{name}</td>
+
+				{/* Заполняем оставшиеся ячейки для выравнивания столбцов */}
+				{[...Array(3 - level)].map((_, index) => (
+					<td key={index}></td>
+				))}
+
+				{/* Отображаем данные, если они есть */}
+				{data
+					? data.map((entry, index) => (
 							<React.Fragment key={index}>
 								<td>{entry.views}</td>
 								<td>{entry.deals}</td>
@@ -41,64 +40,52 @@ const renderSubSources = (subSource, level = 1) => {
 								<td>{entry.cpa}</td>
 								<td>{entry.cps}</td>
 							</React.Fragment>
-						))}
-					{/* Если данных нет, добавляем пустые ячейки для выравнивания */}
-					{!data &&
-						Array(12)
-							.fill(null)
-							.map((_, index) => <td key={index}></td>)}
-				</tr>
-				{/* Рекурсивно отображаем вложенные подуровни */}
-				{!isNextSourceNameEmpty &&
-					renderSubSources(subSource, level + 1)}
-			</React.Fragment>
-		)
-	);
+					  ))
+					: // Если данных нет, добавляем пустые ячейки
+					  [...Array(12)].map((_, index) => <td key={index}></td>)}
+			</tr>
+
+			{/* Рекурсивно рендерим вложенные источники, увеличивая уровень */}
+			{!isNextSourceNameEmpty && renderNestedSources(subSource, level + 1)}
+		</React.Fragment>
+	));
 };
 
-const renderTable = (data) => {
+// Основная функция для рендеринга таблицы данных верхнего уровня
+const renderMainTable = (data) => {
 	if (!data || data.length === 0) return null; // Проверка на наличие данных
 
 	return data.map(({ id, name, isNextSourceNameEmpty, subSource }) => (
 		<React.Fragment key={id}>
 			<tr>
-				{/* Отображаем имя основного уровня */}
+				{/* Отображаем имя основного источника */}
 				<td>{name}</td>
-				{/* Добавляем пустые ячейки для остальных уровней и данных */}
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+
+				{/* Добавляем пустые ячейки для выравнивания с подуровнями */}
+				{[...Array(15)].map((_, index) => (
+					<td key={index}></td>
+				))}
 			</tr>
-			{/* Рекурсивно отображаем подуровни */}
-			{!isNextSourceNameEmpty && renderSubSources(subSource, 1)}
+
+			{/* Рекурсивно рендерим вложенные подуровни источников */}
+			{!isNextSourceNameEmpty && renderNestedSources(subSource, 1)}
 		</React.Fragment>
 	));
 };
 
+// Компонент таблицы
 const Table = () => {
 	return (
 		<table>
 			<thead>
 				<tr>
-					<th>Source</th>
-					<th>SubSource-1</th>
-					<th>SubSource-2</th>
-					<th>SubSource-3</th>
-					<th>Views</th>
-					<th>Deals</th>
-					<th>Sells</th>
+					<th>Источник</th>
+					<th>Подысточник-1</th>
+					<th>Подысточник-2</th>
+					<th>Подысточник-3</th>
+					<th>Показы</th>
+					<th>Сделки</th>
+					<th>Покупки</th>
 					<th>Impressions</th>
 					<th>Expenses</th>
 					<th>Secondary Orders</th>
@@ -110,7 +97,7 @@ const Table = () => {
 					<th>CPS</th>
 				</tr>
 			</thead>
-			<tbody>{renderTable(data)}</tbody>
+			<tbody>{renderMainTable(data)}</tbody>
 		</table>
 	);
 };
